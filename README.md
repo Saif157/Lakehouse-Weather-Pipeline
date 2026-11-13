@@ -1,7 +1,9 @@
 # Lakehouse-Weather-Pipeline
 Implement a complete automated batch ETL pipeline for your own workflow using Apache Airflow, Databricks, and AWS.
 
-## Project Architecture & Implementation
+## Architecture
+
+![Architecture Diagram](/architecture.png)
 
 - **Apache Airflow — Workflow Orchestration:** Three decoupled DAGs manage the workflow lifecycle across daily incremental ingestion, chunked historical backfills, and dataset-triggered analytics. Parallel city extractions run via dynamic task mapping with exponential backoff retries and concurrency pools to honor API rate limits. A validation gate inspects landed S3 payloads to block downstream compute clusters if extraction fails.
   
