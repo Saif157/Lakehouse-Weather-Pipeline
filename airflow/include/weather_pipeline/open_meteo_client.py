@@ -21,8 +21,6 @@ ENDPOINTS = {
 
 
 class ApiResponseError(RuntimeError):
-    """The API answered, but the answer can never be used (4xx, bad shape)."""
-
 
 def build_session(max_retries: int = 5, backoff_factor: float = 1.5) -> requests.Session:
     retry = Retry(
